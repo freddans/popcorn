@@ -1,0 +1,109 @@
+/* Styling specific to the login form and its components */
+
+.logo {
+    padding-left: 20%;
+}
+
+.login-container {
+    position: relative;
+    min-height: 100vh; /* Ensure minimum viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fallback color in case background image fails */
+    background-image: url('/images/background.jpg'); /* Adjust path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-content {
+    background: rgba(0, 0, 0, 0.75); /* Semi-transparent black background for the login form */
+    padding: 60px 68px 40px;
+    border-radius: 4px;
+    width: 300px;
+    text-align: center;
+    z-index: 1;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #fff; /* White text color for headings */
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: #333; /* Dark background for input fields */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* White text color */
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #8c8c8c; /* Light gray label color */
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.75rem;
+    color: #8c8c8c; /* Light gray label color */
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #e50914; /* Netflix red color */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* White text color */
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #f6121d; /* Darker shade of Netflix red on hover */
+}
+
+.signup-section {
+    margin-top: 20px;
+    color: #8c8c8c; /* Light gray text color */
+}
+
+.signup-section a {
+    color: #fff; /* White text color for links */
+    text-decoration: none;
+}
+
+.signup-section a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+.disclaimer {
+    margin-top: 20px;
+    font-size: 0.75rem;
+    color: #8c8c8c; /* Light gray text color */
+}
+
+.disclaimer a {
+    color: #0071eb; /* Blue color for links */
+    text-decoration: none;
+}
+
+.disclaimer a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}

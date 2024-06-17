@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPCORN</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+<div class="header-div">
+    <a href="#" class="logo">POPCORN</a>
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">TV Shows</a>
+        <a href="#">Movies</a>
+        <a href="#">Recent and Popular</a>
+        <a href="#">My List</a>
+    </nav>
+</div>
+
+<div class="index-container">
+    <div class="index-content">
+        <div id="player"></div>
+    </div>
+    <h1 class="info-list-div">Most recent movies</h1>
+    <div class="movies-list">
+        <div th:each="movie : ${mostrecentmovies}" class="movie-item" th:data-trailer-url="${movie.trailerUrl}" th:style="'background-image: url(' + @{${movie.coverPhoto}} + ');'">
+            <div class="movie-name" th:text="${movie.name}"></div>
+        </div>
+    </div>
+    <h1 class="info-list-div">Most recent TV Shows</h1>
+    <div class="tvshow-list">
+        <div th:each="tvshow : ${mostrecenttvshows}" class="tvshow-item" th:data-trailer-url="${tvshow.trailerUrl}" th:style="'background-image: url(' + @{${tvshow.coverPhoto}} + ');'">
+            <div class="tvshow-name" th:text="${tvshow.name}"></div>
+        </div>
+    </div>
+    <div style="margin: 20px;"></div>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    // This function creates an <iframe> (and YouTube player)
+    // after the API code downloads.
+    let player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '100%',
+            width: '100%',
+            videoId: '73_1biulkYk', // Initial video ID, replace with a valid video ID
+            playerVars: {
+                'autoplay': 0, // Set to 1 if you want autoplay
+                'controls': 1,
+                'rel': 0,
+                'showinfo': 0,
+                'modestbranding': 1
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        // Do something when player is ready
+    }
+
+    function onPlayerStateChange(event) {
+        // Do something when player state changes
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const movieItems = document.querySelectorAll('.movie-item, .tvshow-item');
+
+        movieItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const trailerUrl = this.getAttribute('data-trailer-url');
+                player.loadVideoById(getYouTubeID(trailerUrl));
+            });
+        });
+
+        // Set the initial video to the first movie's trailer URL if available
+        if (movieItems.length > 0) {
+            const firstTrailerUrl = movieItems[0].getAttribute('data-trailer-url');
+            player.loadVideoById(getYouTubeID(firstTrailerUrl));
+        }
+    });
+
+    // Extracts YouTube video ID from URL
+    function getYouTubeID(url) {
+        let video_id = url.split('v=')[1];
+        const ampersandPosition = video_id.indexOf('&');
+        if (ampersandPosition !== -1) {
+            video_id = video_id.substring(0, ampersandPosition);
+        }
+        return video_id;
+    }
+</script>
+
+</body>
+</html>

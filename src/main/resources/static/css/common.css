@@ -1,0 +1,30 @@
+/* Reset default styles and set global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Optional: Prevent horizontal scrollbar */
+    font-family: Arial, sans-serif; /* Default font family */
+}
+
+.header-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent black background */
+    z-index: 1000; /* Ensure the header is above other content */
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 2rem; /* Adjust size as desired */
+    color: #e50914; /* Netflix red color */
+    font-weight: bold; /* Ensure the logo stands out */
+}

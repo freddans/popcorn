@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.login-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    background-image: url('/images/background.jpg'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 100%;
+}
+
+.login-content {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 60px 68px 40px;
+    border-radius: 4px;
+    width: 300px;
+    text-align: center;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #e50914;
+    margin-bottom: 20px;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #8c8c8c;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.75rem;
+    color: #8c8c8c;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #f6121d;
+}
+
+.help-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #8c8c8c;
+    font-size: 0.9rem;
+}
+
+.signup-section {
+    margin-top: 20px;
+    color: #8c8c8c;
+}
+
+.signup-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.signup-section a:hover {
+    text-decoration: underline;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    font-size: 0.75rem;
+    color: #8c8c8c;
+}
+
+.disclaimer a {
+    color: #0071eb;
+    text-decoration: none;
+}
+
+.disclaimer a:hover {
+    text-decoration: underline;
+}
